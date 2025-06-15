@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gpt2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gpt2
+  template:
+    metadata:
+      labels:
+        app: gpt2
+    spec:
+      containers:
+        - name: gpt2-container
+          image: bagasaqmalfebrianto/gpt2-fastapi:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "300Mi"
+            limits:
+              cpu: "500m"
+              memory: "400Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gpt2-service
+spec:
+  selector:
+    app: gpt2
+  ports:
+    - protocol: TCP
+      port: 80       # Port yang akan di-expose
+      targetPort: 8000  # Port di container yang menjalankan FastAPI
+  # type: LoadBalancer  # Bisa diganti ke NodePort jika di Kubernetes lokal
