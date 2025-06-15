@@ -233,6 +233,10 @@ Melakukan push image menggunakan konfigurasi ``docker push bagasaqmalfebrianto/g
 
 ![alt text](image-7.png)
 
+Tampak bahwa image berhasil di push kedalam Docker Hub
+
+![alt text](image-9.png)
+
 The end~
 
 Saya harus mengulang kembali karena
