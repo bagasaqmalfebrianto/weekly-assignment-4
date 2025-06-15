@@ -36,4 +36,4 @@ spec:
     - protocol: TCP
       port: 80       # Port yang akan di-expose
       targetPort: 8000  # Port di container yang menjalankan FastAPI
-  # type: LoadBalancer  # Bisa diganti ke NodePort jika di Kubernetes lokal
+

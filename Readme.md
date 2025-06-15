@@ -29,7 +29,7 @@ Keterbatasan Waktu dan Resource:  Pengerjaan Task 2 belum dapat diselesaikan sep
 
 Sebagai contoh :
 
-![alt text](image-4.png)
+![alt text](image/image-4.png)
 
 ### Soal 1: Membuat Budget Alert di GCP
 
@@ -39,21 +39,21 @@ Sebagai contoh :
 
 Gambar berikut pengeluaran awal saya (Dalam hal ini saya belum pernah menggunakan GCP dan melakukan set Alert)
 
-![alt text](image.png)
+![alt text](image/image.png)
 
 Sebagai bentuk pengingat atau Alert, kita bisa melakukan konfigurasi dengan mengatur Threshold rules. Disini saya memanfaatkan fitur tersebut sebagai pemantau pengeluaran.
 
-![alt text](image-1.png)
+![alt text](image/image-1.png)
 
 Berikut adalah gambar ketika Alert sudah diterapkan.
 
-![alt text](image-2.png)
+![alt text](image/image-2.png)
 
 ### Soal 2: Bangun pipeline CI/CD otomatis
 
 Berikut adalah struktur file yang dibentuk : 
 
-![alt text](image-3.png)
+![alt text](image/image-3.png)
 
 ## 1. Inisiasi file Fastapi
 Kode berikut adalah cara membuat API menggunakan FastAPI yang memanfaatkan model GPT-2 yang sudah di-fine-tune dengan TensorFlow.
@@ -216,14 +216,14 @@ CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8000"]
 ## 6. Membuat Docker Image
 Membuat Docker image menggunakan konfigurasi ``docker build -t gpt2-fastapi:latest .``
 
-![alt text](image-6.png)
+![alt text](image/image-6.png)
 
 ## 7. Terapkan File Konfigurasi deployment.yaml
 
 Setelah memastikan bahwa kubectl terhubung ke cluster yang tepat, jalankan perintah ``kubectl apply -f deployment.yaml
 `` untuk menerapkan konfigurasi yang ada di dalam file deployment.yaml
 
-![alt text](image-5.png)
+![alt text](image/image-5.png)
 
 Tampak bahwa pod berhasil dibuat.
 
@@ -231,14 +231,15 @@ Tampak bahwa pod berhasil dibuat.
 
 Melakukan push image menggunakan konfigurasi ``docker push bagasaqmalfebrianto/gpt2-fastapi:latest``
 
-![alt text](image-7.png)
+![alt text](image/image-7.png)
 
 Tampak bahwa image berhasil di push kedalam Docker Hub
 
-![alt text](image-9.png)
+![alt text](image/image-9.png)
 
 The end~
 
-Saya harus mengulang kembali karena
-![alt text](image-8.png)
+Saya harus mengulang kembali karena library pytorch tidak terinstall dan harus melakukan install ulang serta membuat docker image kembali.
+
+![alt text](image/image-8.png)
 

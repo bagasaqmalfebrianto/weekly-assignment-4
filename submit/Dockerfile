@@ -2,15 +2,15 @@
 FROM python:3.9-slim
 
 # Set working directory di container
-WORKDIR /app
+WORKDIR /code
 
 # Salin requirements dan install dependencies
-COPY requirements.txt .
+COPY ./requirements.txt /code/requirements.text
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /code/requirements.text
 
 # Salin seluruh kode aplikasi ke dalam container
-COPY . .
+COPY ./ /code/app
 
 # Expose port FastAPI
 EXPOSE 8000
